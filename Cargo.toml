@@ -1,0 +1,25 @@
+[package]
+name = "esp32-ebyte-e32"
+version = "0.1.0"
+authors = ["Gustavo Batistela @gustavobat"]
+edition = "2021"
+categories = ["embedded", "hardware"]
+keywords = ["embedded", "svc", "idf", "esp-idf", "esp32"]
+description = "Minimal example of using an ESP32 MCU to drive an Ebyte E32 LoRa modem"
+
+[dependencies]
+esp-idf-sys = { version = "0.31", features = ["binstart"] }
+esp-idf-svc = "0.42.1"
+esp-idf-hal = "0.38"
+embedded-svc = "0.22"
+embedded-hal = "0.2"
+anyhow = "1"
+ebyte-e32 = { git = "https://github.com/barafael/ebyte-e32-rs", branch = "main" }
+
+[build-dependencies]
+embuild = "0.29"
+anyhow = "1"
+
+[features]
+receiver = []
+transmitter = []
